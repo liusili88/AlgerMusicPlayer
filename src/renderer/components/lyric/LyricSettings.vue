@@ -68,12 +68,12 @@
                 <n-slider
                   v-model:value="config.fontSize"
                   :step="1"
-                  :min="12"
-                  :max="96"
+                  :min="16"
+                  :max="128"
                   :marks="{
-                    16: t('settings.lyricSettings.fontSizeMarks.small'),
-                    32: t('settings.lyricSettings.fontSizeMarks.medium'),
-                    64: t('settings.lyricSettings.fontSizeMarks.large')
+                    32: t('settings.lyricSettings.fontSizeMarks.small'),
+                    64: t('settings.lyricSettings.fontSizeMarks.medium'),
+                    96: t('settings.lyricSettings.fontSizeMarks.large')
                   }"
                 />
               </div>
