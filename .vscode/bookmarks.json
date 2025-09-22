@@ -19,6 +19,16 @@
 					"label": "歌词文字大小"
 				}
 			]
+		},
+		{
+			"path": "src/main/index.ts",
+			"bookmarks": [
+				{
+					"line": 101,
+					"column": 23,
+					"label": "阻止显示器休眠"
+				}
+			]
 		}
 	]
 }

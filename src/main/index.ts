@@ -1,5 +1,5 @@
 import { electronApp, optimizer } from '@electron-toolkit/utils';
-import { app, ipcMain, nativeImage } from 'electron';
+import { app, ipcMain, nativeImage, powerSaveBlocker } from 'electron';
 import { join } from 'path';
 
 import type { Language } from '../i18n/main';
@@ -24,6 +24,7 @@ const icon = nativeImage.createFromPath(
 );
 
 let mainWindow: Electron.BrowserWindow;
+let blockerId: number | null = null;
 
 // 初始化应用
 function initialize() {
@@ -97,6 +98,10 @@ if (!isSingleInstance) {
     // 初始化窗口大小管理器
     initWindowSizeManager();
 
+    // 启动 powerSaveBlocker
+    blockerId = powerSaveBlocker.start('prevent-display-sleep');
+    console.log('powerSaveBlocker 启动成功，ID:', blockerId);
+
     // 初始化应用
     initialize();
 
@@ -142,6 +147,11 @@ if (!isSingleInstance) {
   app.on('before-quit', () => {
     // 设置退出标志
     setAppQuitting(true);
+    // 释放 powerSaveBlocker
+    if (blockerId !== null) {
+      powerSaveBlocker.stop(blockerId);
+      blockerId = null;
+    }
   });
 
   // 重启应用
