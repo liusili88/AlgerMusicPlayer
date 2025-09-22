@@ -367,7 +367,7 @@ const handleFontSizeChange = async () => {
 
 // 增加字体大小
 const increaseFontSize = async () => {
-  if (fontSize.value < 48) {
+  if (fontSize.value < 128) {
     fontSize.value += fontSizeStep;
     await handleFontSizeChange();
   }
