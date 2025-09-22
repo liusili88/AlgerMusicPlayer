@@ -89,7 +89,7 @@
           class="music-lrc"
           :style="{
             height: config.hidePlayBar ? '85vh' : '65vh',
-            width: isMobile ? '100vw' : config.hideCover ? '50vw' : '500px'
+            width: isMobile ? '100vw' : config.hideCover ? '100vw' : '65vw'
           }"
           :native-scrollbar="false"
           @mouseover="mouseOverLayout"
@@ -605,13 +605,10 @@ defineExpose({
 
   .music-content {
     @apply flex flex-col justify-center items-center relative;
-    width: 500px;
     transition: all 0.3s ease;
-
     &.center {
-      @apply w-auto;
       .music-lrc {
-        @apply w-full max-w-3xl mx-auto;
+        @apply mx-auto;
       }
       .music-lrc-text {
         @apply text-center;

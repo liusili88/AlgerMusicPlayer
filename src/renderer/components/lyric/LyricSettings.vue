@@ -69,11 +69,11 @@
                   v-model:value="config.fontSize"
                   :step="1"
                   :min="12"
-                  :max="32"
+                  :max="96"
                   :marks="{
-                    12: t('settings.lyricSettings.fontSizeMarks.small'),
-                    22: t('settings.lyricSettings.fontSizeMarks.medium'),
-                    32: t('settings.lyricSettings.fontSizeMarks.large')
+                    16: t('settings.lyricSettings.fontSizeMarks.small'),
+                    32: t('settings.lyricSettings.fontSizeMarks.medium'),
+                    64: t('settings.lyricSettings.fontSizeMarks.large')
                   }"
                 />
               </div>
