@@ -1,0 +1,24 @@
+{
+	"files": [
+		{
+			"path": "vite.config.ts",
+			"bookmarks": [
+				{
+					"line": 12,
+					"column": 13,
+					"label": "别名配置"
+				}
+			]
+		},
+		{
+			"path": "src/renderer/components/lyric/LyricSettings.vue",
+			"bookmarks": [
+				{
+					"line": 62,
+					"column": 10,
+					"label": "歌词文字大小"
+				}
+			]
+		}
+	]
+}
